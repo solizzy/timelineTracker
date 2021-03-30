@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example of Timeline Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+<div class="izzy-timeline-wrapper" style="--colorMain: #6DD3BE; --colorSecondary: #6DD3BE00; --colorBackground: #ebebeb; --colorHeader: white; --colorDescription: currentColor; --colorDone: #774242; --colorDropped: #774242; --colorActive: var(--colorMain); --colorHiatus: var(--colorMain); --colorIdea: #689db8; --borderWidth: 3px; --gapS: calc(var(--gapM) * 0.75); --gapM: 20px; --gapL: calc(var(--gapM) * 1.5);">
+  <div class="izzy-timeline">
+    <div class="izzy-divider">???</div>
+    <ul class="izzy-threads-group">
+      <li class="izzy-thread izzy-active">
+        <div class="izzy-thread-status">
+          <svg><use href="icons.svg#active"></use></svg>
+          <span>active</span>
+        </div>
+        <div class="izzy-thread-info">
+          <a class="izzy-thread-name" href="">Example</a>
+          <div class="izzy-thread-details">
+            This is an example thread. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Repellendus consectetur esse, quam quis ut cumque
+            facilis possimus deleniti alias excepturi!
+          </div>
+        </div>
+      </li>
+      <li class="izzy-thread izzy-hiatus">
+        <div class="izzy-thread-status">
+          <svg><use href="icons.svg#hiatus"></use></svg>
+          <span>hiatus</span>
+        </div>
+        <div class="izzy-thread-info">
+          <a class="izzy-thread-name" href="">Example</a>
+          <div class="izzy-thread-details">This is an example thread.</div>
+        </div>
+      </li>
+      <li class="izzy-thread izzy-idea">
+        <div class="izzy-thread-status">
+          <svg><use href="icons.svg#idea"></use></svg>
+          <span>idea</span>
+        </div>
+        <div class="izzy-thread-info">
+          <a class="izzy-thread-name" href="">Example</a>
+          <div class="izzy-thread-details">This is an example thread.</div>
+        </div>
+      </li>
+      <li class="izzy-thread izzy-dropped">
+        <div class="izzy-thread-status">
+          <svg><use href="icons.svg#dropped"></use></svg>
+          <span>dropped</span>
+        </div>
+        <div class="izzy-thread-info">
+          <a class="izzy-thread-name" href="">Example</a>
+          <div class="izzy-thread-details">This is an example thread.</div>
+        </div>
+      </li>
+      <li class="izzy-thread izzy-done">
+        <div class="izzy-thread-status">
+          <svg><use href="icons.svg#done"></use></svg>
+          <span>done</span>
+        </div>
+        <div class="izzy-thread-info">
+          <a class="izzy-thread-name" href="">Example</a>
+          <div class="izzy-thread-details">This is an example thread.</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
