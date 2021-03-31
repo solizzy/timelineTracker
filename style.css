@@ -83,6 +83,7 @@
   background-color: var(--colorBackground);
   border-radius: var(--borderWidth);
   box-shadow: 0 5px 8px -2px black;
+  z-index: 1;
 }
 .izzy-timeline .izzy-thread:before {
   content: "";
@@ -99,6 +100,7 @@
   padding: var(--gapS);
   display: grid;
   gap: 0.25em;
+  background: var(--colorBackground);
 }
 .izzy-timeline .izzy-thread-name {
   text-decoration: none;
