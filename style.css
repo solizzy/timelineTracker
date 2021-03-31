@@ -3,7 +3,7 @@
   --colorSecondary: #6dd3be00;
   --colorBackground: #ebebeb;
   --colorHeader: var(--colorBackground);
-  --colorDescription: currentColor;
+  --colorDescription: #121414;
 
   --colorDone: #774242;
   --colorDropped: #774242;
@@ -106,7 +106,7 @@
 }
 .izzy-timeline .izzy-thread:hover .izzy-thread-name {
   filter: brightness(1);
-  color: currentColor;
+  color: var(--colorStatus);
 }
 .izzy-timeline .izzy-thread-details {
   font-size: 0.9em;
