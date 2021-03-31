@@ -17,7 +17,6 @@
   --gapM: 20px;
   --gapL: calc(var(--gapM) * 1.5);
 }
-
 .izzy-timeline {
   max-width: 500px;
   margin: auto;
@@ -37,7 +36,7 @@
   padding: 0;
   margin: 0;
 }
-.izzy-divider {
+.izzy-timeline .izzy-divider {
   font-size: 1em;
   background-color: var(--colorMain);
   background: linear-gradient(
@@ -50,30 +49,30 @@
   margin: var(--gapM) 0 var(--gapL);
   border-radius: 0 var(--borderWidth) var(--borderWidth) 0;
 }
-.izzy-threads-group {
+.izzy-timeline .izzy-threads-group {
   display: grid;
   gap: var(--gapM);
   margin: var(--gapM) var(--gapS) var(--gapL) var(--gapM);
 }
-.izzy-done {
+.izzy-timeline .izzy-done {
   --colorStatus: var(--colorDone);
 }
-.izzy-dropped {
+.izzy-timeline .izzy-dropped {
   --colorStatus: var(--colorDropped);
   --opacityStatus: 0.75;
 }
-.izzy-hiatus {
+.izzy-timeline .izzy-hiatus {
   --colorStatus: var(--colorHiatus);
   --opacityStatus: 0.75;
 }
-.izzy-active {
+.izzy-timeline .izzy-active {
   --colorStatus: var(--colorActive);
 }
-.izzy-idea {
+.izzy-timeline .izzy-idea {
   --colorStatus: var(--colorIdea);
   --opacityStatus: 0.75;
 }
-.izzy-thread {
+.izzy-timeline .izzy-thread {
   position: relative;
   display: grid;
   grid-template-columns: 4rem 1fr;
@@ -81,7 +80,7 @@
   border-radius: var(--borderWidth);
   box-shadow: 0 5px 8px -2px black;
 }
-.izzy-thread:before {
+.izzy-timeline .izzy-thread:before {
   content: "";
   display: block;
   width: 100%;
@@ -92,28 +91,29 @@
   left: -50%;
   top: 48%;
 }
-.izzy-thread-info {
+.izzy-timeline .izzy-thread-info {
   padding: var(--gapS);
   display: grid;
   gap: 0.25em;
   opacity: var(--opacityStatus, 1);
 }
-.izzy-thread-name {
+.izzy-timeline .izzy-thread-name {
   text-decoration: none;
   color: var(--colorStatus);
   filter: brightness(0.75);
   font-weight: 600;
   letter-spacing: 0.1ch;
 }
-.izzy-thread:hover .izzy-thread-name {
+.izzy-timeline .izzy-thread:hover .izzy-thread-name {
   filter: brightness(1);
+  color: currentColor;
 }
-.izzy-thread-details {
+.izzy-timeline .izzy-thread-details {
   font-size: 0.9em;
   line-height: 1.5;
   color: var(--colorDescription);
 }
-.izzy-thread-status {
+.izzy-timeline .izzy-thread-status {
   --statusText: rgba(255, 255, 255, var(--opacityStatus, 0.95));
   --size: 1.8rem;
   background-color: var(--colorStatus, var(--colorMain));
@@ -129,7 +129,7 @@
   gap: 0.5em;
   border-radius: var(--borderWidth) 0 0 var(--borderWidth);
 }
-.izzy-thread-status svg {
+.izzy-timeline .izzy-thread-status svg {
   color: var(--statusText);
   height: var(--size);
   width: var(--size);
