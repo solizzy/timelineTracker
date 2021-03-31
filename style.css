@@ -39,7 +39,9 @@
   margin: 0;
 }
 .izzy-timeline .izzy-divider {
-  font-size: 1em;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
   background-color: var(--colorMain);
   background: linear-gradient(
     to right,
@@ -115,7 +117,6 @@
   color: var(--colorDescription);
 }
 .izzy-timeline .izzy-thread-status {
-  --statusText: rgba(255, 255, 255, var(--opacityStatus, 0.95));
   --size: 1.8rem;
   background-color: var(--colorStatus, var(--colorMain));
   font-size: 0.6em;
@@ -126,7 +127,8 @@
   justify-content: center;
   padding: var(--gapS);
   text-transform: uppercase;
-  color: var(--statusText);
+  color: var(--colorHeader);
+  opacity: var(--opacityStatus, 1);
   gap: 0.5em;
   border-radius: var(--borderWidth) 0 0 var(--borderWidth);
 }
