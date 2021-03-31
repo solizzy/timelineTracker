@@ -15,6 +15,8 @@
 
   --hoverFilter: brightness(1.3);
 
+  --letterSpacing: 1px;
+
   --gapS: calc(var(--gapM) * 0.75);
   --gapM: 20px;
   --gapL: calc(var(--gapM) * 1.5);
@@ -52,6 +54,7 @@
   padding: var(--gapS) var(--gapL);
   margin: var(--gapM) 0 var(--gapL);
   border-radius: 0 var(--borderWidth) var(--borderWidth) 0;
+  letter-spacing: var(--letterSpacing);
 }
 .izzy-timeline .izzy-threads-group {
   display: grid;
@@ -101,7 +104,7 @@
   text-decoration: none;
   color: var(--colorStatus);
   font-weight: 600;
-  letter-spacing: 0.1ch;
+  letter-spacing: var(--letterSpacing);
 }
 .izzy-timeline .izzy-thread:hover .izzy-thread-name {
   color: var(--colorStatus);
@@ -125,6 +128,7 @@
   text-transform: uppercase;
   color: var(--colorHeader);
   gap: 0.5em;
+  letter-spacing: var(--letterSpacing);
   border-radius: var(--borderWidth) 0 0 var(--borderWidth);
 }
 .izzy-timeline .izzy-thread-status svg {
