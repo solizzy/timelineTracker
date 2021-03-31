@@ -63,18 +63,15 @@
 }
 .izzy-timeline .izzy-dropped {
   --colorStatus: var(--colorDropped);
-  --opacityStatus: 0.75;
 }
 .izzy-timeline .izzy-hiatus {
   --colorStatus: var(--colorHiatus);
-  --opacityStatus: 0.75;
 }
 .izzy-timeline .izzy-active {
   --colorStatus: var(--colorActive);
 }
 .izzy-timeline .izzy-idea {
   --colorStatus: var(--colorIdea);
-  --opacityStatus: 0.75;
 }
 .izzy-timeline .izzy-thread {
   position: relative;
@@ -99,7 +96,6 @@
   padding: var(--gapS);
   display: grid;
   gap: 0.25em;
-  opacity: var(--opacityStatus, 1);
 }
 .izzy-timeline .izzy-thread-name {
   text-decoration: none;
@@ -128,7 +124,6 @@
   padding: var(--gapS);
   text-transform: uppercase;
   color: var(--colorHeader);
-  opacity: var(--opacityStatus, 1);
   gap: 0.5em;
   border-radius: var(--borderWidth) 0 0 var(--borderWidth);
 }
