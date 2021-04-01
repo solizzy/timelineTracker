@@ -1,17 +1,19 @@
-(async () => {
+async function createTracker(character) {
   try {
     const MINUTE_IN_MS = 60000;
     const expireTime = Date.now() + 10 * MINUTE_IN_MS;
 
     const trackerDatabase =
-      "https://notelizzy.api.stdlib.com/gsheets-database@dev/select/sortedBy/?key=actTitle";
+      "https://notelizzy.api.stdlib.com/gsheets-database@dev/select/groupByCharacterAct";
     const data = await fetchCache(trackerDatabase, expireTime);
-    const htmlOutput = createTrackerHTML(data);
-    document.querySelector(".izzy-timeline-wrapper").innerHTML = htmlOutput;
+    const htmlOutput = createTrackerHTML(data[character]);
+    const wrapperSelector = `.izzy-timeline-wrapper[data-for="${character}"]`;
+    document.querySelector(wrapperSelector).innerHTML = htmlOutput;
   } catch (error) {
     console.error(error);
+    alert("There was an error getting this tracker to work! Please contact Izzy and come back later. <3")
   }
-})();
+}
 
 function writeCache(key, data, expires) {
   return window.localStorage.setItem(key, JSON.stringify({ data, expires }));
@@ -35,7 +37,6 @@ async function fetchCache(url, expireTime = 0) {
   writeCache(url, data, expireTime);
   return data;
 }
-
 
 function createTrackerHTML(data) {
   const sectionFormat = ([sectionName, threads]) => {
@@ -105,7 +106,7 @@ function createTrackerHTML(data) {
       d="M377,105,279.1,7a24,24,0,0,0-17-7H256V128H384v-6.1A23.92,23.92,0,0,0,377,105ZM224,136V0H24A23.94,23.94,0,0,0,0,24V488a23.94,23.94,0,0,0,24,24H360a23.94,23.94,0,0,0,24-24V160H248A24.07,24.07,0,0,1,224,136Zm72,176v16a16,16,0,0,1-16,16H104a16,16,0,0,1-16-16V312a16,16,0,0,1,16-16H280A16,16,0,0,1,296,312Z"
     ></path>
   </symbol>
-</svg>`
+</svg>`;
 
   const trackerFormat = `
   <div class="izzy-timeline">
