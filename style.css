@@ -103,13 +103,25 @@
   background: var(--colorBackground);
 }
 .izzy-timeline .izzy-thread-name {
+  display: block;
   text-decoration: none;
   color: var(--colorStatus);
   font-weight: 600;
   letter-spacing: var(--letterSpacing);
 }
+.izzy-timeline-wrapper .izzy-thread-name::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 .izzy-timeline .izzy-thread:hover .izzy-thread-name {
   color: var(--colorStatus);
+}
+.izzy-timeline .izzy-thread:hover .izzy-thread-name span {
   filter: var(--hoverFilter);
 }
 .izzy-timeline .izzy-thread-details {

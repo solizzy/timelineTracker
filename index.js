@@ -59,7 +59,7 @@ function createTrackerHTML(data) {
         <span>${statusFormat}</span>
       </div>
       <div class="izzy-thread-info">
-        <a class="izzy-thread-name" ${urlFormat}>${name}</a>
+        <a class="izzy-thread-name" ${urlFormat}><span>${name}</span></a>
         <div class="izzy-thread-details">${summary}</div>
       </div>
     </li>
