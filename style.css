@@ -121,8 +121,10 @@
 .izzy-timeline .izzy-thread:hover .izzy-thread-name {
   color: var(--colorStatus);
 }
-.izzy-timeline .izzy-thread:hover .izzy-thread-name span {
+.izzy-timeline .izzy-thread:hover .izzy-thread-name span,
+.izzy-timeline .izzy-thread:hover .izzy-thread-status {
   filter: var(--hoverFilter);
+  transition: 0.5s filter;
 }
 .izzy-timeline .izzy-thread-details {
   font-size: 0.9em;
