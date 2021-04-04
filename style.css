@@ -137,6 +137,11 @@
   line-height: 1.5;
   color: var(--colorDescription);
 }
+
+.izzy-timeline .izzy-thread-details a {
+  position: relative;
+  z-index: 2;
+}
 .izzy-timeline .izzy-thread-status {
   --size: 1.8rem;
   background-color: var(--colorStatus, var(--colorMain));
