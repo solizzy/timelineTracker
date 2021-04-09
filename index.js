@@ -6,11 +6,9 @@ async function createTracker(character) {
     const trackerDatabase =
       "https://notelizzy.api.stdlib.com/gsheets-database@dev/select/groupByCharacterAct";
     const data = await fetchCache(trackerDatabase, expireTime);
-    const htmlOutput = createTrackerHTML(data[character]);
+    const htmlOutput = createTrackerHTML(data[character.toLowerCase()], character);
     const wrapperSelector = `.izzy-timeline-wrapper[data-for="${character}"]`;
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelector(wrapperSelector).innerHTML = htmlOutput;
-    });
+    document.querySelector(wrapperSelector).innerHTML = htmlOutput;
   } catch (error) {
     console.error(error);
     alert(
@@ -42,7 +40,11 @@ async function fetchCache(url, expireTime = 0) {
   return data;
 }
 
-function createTrackerHTML(data) {
+function createTrackerHTML(data, characterName) {
+  if (data === undefined) {
+    return `<span>No tracker data found for ${characterName}</span>`
+  }
+
   const sectionFormat = ([sectionName, threads]) => {
     return `
     <div class="izzy-divider">${sectionName}</div>
