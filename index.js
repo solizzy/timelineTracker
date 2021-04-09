@@ -8,10 +8,14 @@ async function createTracker(character) {
     const data = await fetchCache(trackerDatabase, expireTime);
     const htmlOutput = createTrackerHTML(data[character]);
     const wrapperSelector = `.izzy-timeline-wrapper[data-for="${character}"]`;
-    document.querySelector(wrapperSelector).innerHTML = htmlOutput;
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(wrapperSelector).innerHTML = htmlOutput;
+    });
   } catch (error) {
     console.error(error);
-    alert("There was an error getting this tracker to work! Please contact Izzy and come back later. <3")
+    alert(
+      "There was an error getting this tracker to work! Please contact Izzy and come back later. <3"
+    );
   }
 }
 
