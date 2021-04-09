@@ -114,12 +114,26 @@ function createTrackerHTML(data, characterName) {
   </symbol>
 </svg>`;
 
-  const trackerFormat = `
+  return `
   <div class="izzy-timeline">
     ${data.map(sectionFormat).join("")}
   </div>
   ${SVG_DATA}
 `;
-
-  return trackerFormat;
 }
+
+(function createTrackersFromHTML() {
+  document.addEventListener("DOMContentLoaded", () => {
+    const wrappers = document.querySelectorAll(
+      ".izzy-timeline-wrapper[data-for]"
+    );
+
+    if (wrappers.length > 0) {
+      document
+        .querySelectorAll(".izzy-timeline-wrapper[data-for]")
+        .forEach((wrapper) => createTracker(wrapper.dataset.for));
+    }
+
+    else console.error("Timeline wrapper elements not found.")
+  });
+})();
