@@ -3,11 +3,12 @@ async function createTracker(character) {
     const MINUTE_IN_MS = 60000;
     const expireTime = Date.now() + 10 * MINUTE_IN_MS;
 
-    const trackerDatabase =
-      "https://notelizzy.api.stdlib.com/gsheets-database@dev/select/groupByCharacterAct";
-    const data = await fetchCache(trackerDatabase, expireTime);
-    const htmlOutput = createTrackerHTML(data[character.toLowerCase()], character);
     const wrapperSelector = `.izzy-timeline-wrapper[data-for="${character}"]`;
+    document.querySelector(wrapperSelector).innerHTML = `<div class="lds-facebook"><div></div><div></div><div></div></div>`;
+
+    const trackerDatabase = "https://notelizzy.api.stdlib.com/gsheets-database@dev/select/groupByCharacterAct";
+    const data = await fetchCache(trackerDatabase, expireTime);
+    const htmlOutput = createTrackerHTML( data[character.toLowerCase()], character );
     document.querySelector(wrapperSelector).innerHTML = htmlOutput;
   } catch (error) {
     console.error(error);
@@ -42,7 +43,7 @@ async function fetchCache(url, expireTime = 0) {
 
 function createTrackerHTML(data, characterName) {
   if (data === undefined) {
-    return `<span>No tracker data found for ${characterName}</span>`
+    return `<span>No tracker data found for ${characterName}</span>`;
   }
 
   const sectionFormat = ([sectionName, threads]) => {
@@ -132,8 +133,6 @@ function createTrackerHTML(data, characterName) {
       document
         .querySelectorAll(".izzy-timeline-wrapper[data-for]")
         .forEach((wrapper) => createTracker(wrapper.dataset.for));
-    }
-
-    else console.error("Timeline wrapper elements not found.")
+    } else console.error("Timeline wrapper elements not found.");
   });
 })();
